@@ -127,7 +127,7 @@ _get_prompt_user() {
     [[ $LOGNAME != $USER ]] || [[ $superuser_or_not -eq 0 ]] || [[ -n $SSH_CONNECTION ]] || return
     local prompt_text
     if [[ -n $SSH_CONNECTION ]]; then
-        prompt_text=${TQ_USER_PREFIX}${USER}@$(hostname)${TQ_USER_SUFFIX}
+        prompt_text=${TQ_USER_PREFIX}${USER}@$(hostname -s)${TQ_USER_SUFFIX}
     else
         prompt_text=${TQ_USER_PREFIX}${USER}${TQ_USER_SUFFIX}
     fi
