@@ -196,9 +196,9 @@ $(_get_prompt_section\
 local prompt_tip='$(_get_prompt_tip)'
 _get_prompt_tip() {
     local hour=$(_get_hour)
-    if [[ $hour -ge 12 ]] && [[ $hour -le 14 ]]; then
+    if [[ $hour -ge 12 ]] && [[ $hour -le 13 ]]; then
         echo "$(_get_prompt_section ${DAK_FOOD_SYMBOL} ${DAK_FOOD_SYMBOL_COLOR}) "
-    elif [[ $hour -ge 21 ]] || [[ $hour -le 5 ]]; then
+    elif [[ $hour -ge 21 ]] || [[ $hour -le 3 ]]; then
         echo "$(_get_prompt_section ${DAK_NIGHT_SYMBOL} ${DAK_NIGHT_SYMBOL_COLOR}) "
     fi
 }
