@@ -149,7 +149,7 @@ local prompt_privileges="\
 $(_get_prompt_section\
     ${DAT_PRIVILEGES_SYMBOL}\
     ${DAT_PRIVILEGES_COLOR}\
-    ${DAT_PRIVILEGES_STYLE}) "
+    ${DAT_PRIVILEGES_STYLE})"
 
 # Directory
 local prompt_directory="\
@@ -209,7 +209,7 @@ $prompt_directory\
 $prompt_git_brance\
 $prompt_git_status
 $prompt_exit_code\
-$prompt_privileges"
+$prompt_privileges "
 
 RPROMPT="\
 $prompt_tip\
