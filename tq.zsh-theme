@@ -5,6 +5,12 @@
 # License: MIT
 # https://github.com/kitian616/tq-zsh-theme
 
+# Characters
+TQ_BRANCH_SYMBOL="\ue0a0"
+TQ_FOOD_SYMBOL="🍚"
+TQ_SSH_SYMBOL="\ue0a2"
+TQ_NIGHT_SYMBOL="🌙"
+
 _get_pwd() {
     local git_root=$PWD
     while [[ $git_root != / && ! -e $git_root/.git ]]; do
@@ -51,145 +57,136 @@ _get_prompt_section() {
     fi
 }
 
-# Characters
-DAK_FOOD_EMOJI="☕️"
-DAK_NIGHT_EMOJI="🌙"
-
-DAK_FOOD_CHAR="☕︎"
-DAK_NIGHT_CHAR="☽"
-
-DAK_GIT_SYMBOL="\ue0a0"
-DAK_FOOD_SYMBOL=$DAK_FOOD_CHAR
-DAK_FOOD_SYMBOL_COLOR="yellow"
-DAK_NIGHT_SYMBOL=$DAK_NIGHT_CHAR
-DAK_NIGHT_SYMBOL_COLOR="yellow"
-
 # Privileges
-DAT_PRIVILEGES_SYMBOL="=>"
-DAT_PRIVILEGES_COLOR="green"
-DAT_PRIVILEGES_STYLE="bold"
+TQ_PRIVILEGES_SYMBOL="=>"
+TQ_PRIVILEGES_COLOR="green"
+TQ_PRIVILEGES_STYLE="bold"
 
 # User
-DAT_USER_PREFIX=""
-DAT_USER_SUFFIX=""
-DAT_USER_COLOR="yellow"
-DAT_SUPERUSER_COLOR="red"
+TQ_USER_PREFIX=""
+TQ_USER_SUFFIX=""
+TQ_USER_COLOR="yellow"
+TQ_SUPERUSER_COLOR="red"
 
 # Tip
-DAT_TIP_PREFIX=""
-DAT_TIP_SUFFIX=""
-DAT_TIP_COLOR="blue"
+TQ_TIP_PREFIX=""
+TQ_TIP_SUFFIX=""
+TQ_TIP_COLOR="yellow"
 
 # Dictionary
-DAT_DICTIONARY_PREFIX=""
-DAT_DICTIONARY_SUFFIX=""
-DAT_DICTIONARY_COLOR="cyan"
+TQ_DICTIONARY_PREFIX=""
+TQ_DICTIONARY_SUFFIX=""
+TQ_DICTIONARY_COLOR="cyan"
 
 # Git brance
-DAT_GIT_BRANCE_PREFIX="${DAK_GIT_SYMBOL} "
-DAT_GIT_BRANCE_SUFFIX=""
-DAT_GIT_BRANCE_COLOR="magenta"
+TQ_GIT_BRANCE_PREFIX="${TQ_BRANCH_SYMBOL} "
+TQ_GIT_BRANCE_SUFFIX=""
+TQ_GIT_BRANCE_COLOR="magenta"
 
 # Git status
-DAT_GIT_STATUS_UNTRACKED="${DAT_GIT_STATUS_UNTRACKED:="?"}"
-DAT_GIT_STATUS_ADDED="${DAT_GIT_STATUS_ADDED:="+"}"
-DAT_GIT_STATUS_MODIFIED="${DAT_GIT_STATUS_MODIFIED:="!"}"
-DAT_GIT_STATUS_RENAMED="${DAT_GIT_STATUS_RENAMED:="»"}"
-DAT_GIT_STATUS_DELETED="${DAT_GIT_STATUS_DELETED:="✘"}"
-DAT_GIT_STATUS_STASHED="${DAT_GIT_STATUS_STASHED:="$"}"
-DAT_GIT_STATUS_UNMERGED="${DAT_GIT_STATUS_UNMERGED:="="}"
-DAT_GIT_STATUS_AHEAD="${DAT_GIT_STATUS_AHEAD:="⇡"}"
-DAT_GIT_STATUS_BEHIND="${DAT_GIT_STATUS_BEHIND:="⇣"}"
+TQ_GIT_STATUS_UNTRACKED="${TQ_GIT_STATUS_UNTRACKED:="?"}"
+TQ_GIT_STATUS_ADDED="${TQ_GIT_STATUS_ADDED:="+"}"
+TQ_GIT_STATUS_MODIFIED="${TQ_GIT_STATUS_MODIFIED:="!"}"
+TQ_GIT_STATUS_RENAMED="${TQ_GIT_STATUS_RENAMED:="»"}"
+TQ_GIT_STATUS_DELETED="${TQ_GIT_STATUS_DELETED:="✘"}"
+TQ_GIT_STATUS_STASHED="${TQ_GIT_STATUS_STASHED:="$"}"
+TQ_GIT_STATUS_UNMERGED="${TQ_GIT_STATUS_UNMERGED:="="}"
+TQ_GIT_STATUS_AHEAD="${TQ_GIT_STATUS_AHEAD:="⇡"}"
+TQ_GIT_STATUS_BEHIND="${TQ_GIT_STATUS_BEHIND:="⇣"}"
 
-DAT_GIT_STATUS_PREFIX="["
-DAT_GIT_STATUS_SUFFIX="]"
-DAT_GIT_STATUS_COLOR="red"
+TQ_GIT_STATUS_PREFIX="["
+TQ_GIT_STATUS_SUFFIX="]"
+TQ_GIT_STATUS_COLOR="red"
 
 # Time
-DAT_TIME_PREFIX="["
-DAT_TIME_SUFFIX="]"
-DAT_TIME_COLOR=""
+TQ_TIME_PREFIX="["
+TQ_TIME_SUFFIX="]"
+TQ_TIME_COLOR=""
 
 # Exit code
-DAT_EXIT_CODE_PREFIX=""
-DAT_EXIT_CODE_SUFFIX=""
-DAT_EXIT_CODE_COLOR="red"
+TQ_EXIT_CODE_PREFIX=""
+TQ_EXIT_CODE_SUFFIX=""
+TQ_EXIT_CODE_COLOR="red"
 
 # ZSH_THEME_GIT_PROMPT_SETTING
-ZSH_THEME_GIT_PROMPT_UNTRACKED=$DAT_GIT_STATUS_UNTRACKED
-ZSH_THEME_GIT_PROMPT_ADDED=$DAT_GIT_STATUS_ADDED
-ZSH_THEME_GIT_PROMPT_MODIFIED=$DAT_GIT_STATUS_MODIFIED
-ZSH_THEME_GIT_PROMPT_RENAMED=$DAT_GIT_STATUS_RENAMED
-ZSH_THEME_GIT_PROMPT_DELETED=$DAT_GIT_STATUS_DELETED
-ZSH_THEME_GIT_PROMPT_STASHED=$DAT_GIT_STATUS_STASHED
-ZSH_THEME_GIT_PROMPT_UNMERGED=$DAT_GIT_STATUS_UNMERGED
-ZSH_THEME_GIT_PROMPT_AHEAD=$DAT_GIT_STATUS_AHEAD
-ZSH_THEME_GIT_PROMPT_BEHIND=$DAT_GIT_STATUS_BEHIND
-ZSH_THEME_GIT_PROMPT_DIVERGED=$DAT_GIT_STATUS_DIVERGED
+ZSH_THEME_GIT_PROMPT_UNTRACKED=$TQ_GIT_STATUS_UNTRACKED
+ZSH_THEME_GIT_PROMPT_ADDED=$TQ_GIT_STATUS_ADDED
+ZSH_THEME_GIT_PROMPT_MODIFIED=$TQ_GIT_STATUS_MODIFIED
+ZSH_THEME_GIT_PROMPT_RENAMED=$TQ_GIT_STATUS_RENAMED
+ZSH_THEME_GIT_PROMPT_DELETED=$TQ_GIT_STATUS_DELETED
+ZSH_THEME_GIT_PROMPT_STASHED=$TQ_GIT_STATUS_STASHED
+ZSH_THEME_GIT_PROMPT_UNMERGED=$TQ_GIT_STATUS_UNMERGED
+ZSH_THEME_GIT_PROMPT_AHEAD=$TQ_GIT_STATUS_AHEAD
+ZSH_THEME_GIT_PROMPT_BEHIND=$TQ_GIT_STATUS_BEHIND
+ZSH_THEME_GIT_PROMPT_DIVERGED=$TQ_GIT_STATUS_DIVERGED
 
 # User
 local prompt_user='$(_get_prompt_user)'
 _get_prompt_user() {
     local superuser_or_not=$(_is_superuser)
     [[ $LOGNAME != $USER ]] || [[ $superuser_or_not -eq 0 ]] || [[ -n $SSH_CONNECTION ]] || return
+    local prompt_text
+    if [[ -n $SSH_CONNECTION ]]; then
+        prompt_text=${TQ_USER_PREFIX}${USER}@$(hostname)${TQ_USER_SUFFIX}
+    else
+        prompt_text=${TQ_USER_PREFIX}${USER}${TQ_USER_SUFFIX}
+    fi
     if [[ $superuser_or_not -eq 0 ]]; then
         echo "$(_get_prompt_section\
-            ${DAT_USER_PREFIX}${USER}${DAT_USER_SUFFIX}\
-            ${DAT_SUPERUSER_COLOR}\
+            $prompt_text\
+            $TQ_SUPERUSER_COLOR\
             bold): "
     else
         echo "$(_get_prompt_section\
-            ${DAT_USER_PREFIX}${USER}${DAT_USER_SUFFIX}\
-            ${DAT_USER_COLOR}): "
+            $prompt_text\
+            $TQ_USER_COLOR): "
     fi
 }
 
 # Privileges
 local prompt_privileges="\
 $(_get_prompt_section\
-    ${DAT_PRIVILEGES_SYMBOL}\
-    ${DAT_PRIVILEGES_COLOR}\
-    ${DAT_PRIVILEGES_STYLE})"
+    ${TQ_PRIVILEGES_SYMBOL}\
+    ${TQ_PRIVILEGES_COLOR}\
+    ${TQ_PRIVILEGES_STYLE})"
 
 # Directory
 local prompt_directory="\
 $(_get_prompt_section\
-    ${DAT_DICTIONARY_PREFIX}'$(_get_pwd)'${DAT_DICTIONARY_SUFFIX}\
-    ${DAT_DICTIONARY_COLOR}) "
+    ${TQ_DICTIONARY_PREFIX}'$(_get_pwd)'${TQ_DICTIONARY_SUFFIX}\
+    ${TQ_DICTIONARY_COLOR}) "
 
 # Git brance
 local prompt_git_brance='$(_get_prompt_git_brance)'
 _get_prompt_git_brance() {
-    local git_or_not=$(_is_git)
-    [[ $git_or_not -eq 0 ]] || return
+    [[ $(_is_git) -eq 0 ]] || return
     echo "$(_get_prompt_section\
-        ${DAT_GIT_BRANCE_PREFIX}$(git_current_branch)${DAT_GIT_BRANCE_SUFFIX}\
-        ${DAT_GIT_BRANCE_COLOR}) "
+        ${TQ_GIT_BRANCE_PREFIX}$(git_current_branch)${TQ_GIT_BRANCE_SUFFIX}\
+        ${TQ_GIT_BRANCE_COLOR}) "
 }
 
 # Git satatus
 local prompt_git_status='$(_get_prompt_git_status)'
 _get_prompt_git_status() {
-    local git_or_not=$(_is_git)
     local git_status=$(git_prompt_status)
-    [[ $git_or_not -eq 0 ]] && [[ -n $git_status ]] || return
+    [[ $(_is_git) -eq 0 ]] && [[ -n $git_status ]] || return
     echo "$(_get_prompt_section\
-        ${DAT_GIT_STATUS_PREFIX}${git_status}${DAT_GIT_STATUS_SUFFIX}\
-        ${DAT_GIT_STATUS_COLOR}) "
+        ${TQ_GIT_STATUS_PREFIX}${git_status}${TQ_GIT_STATUS_SUFFIX}\
+        ${TQ_GIT_STATUS_COLOR}) "
 }
 
 
 # Exit code
 local prompt_exit_code="\
 %(?,,$(_get_prompt_section\
-    ${DAT_EXIT_CODE_PREFIX}%?${DAT_EXIT_CODE_SUFFIX}\
-    ${DAT_EXIT_CODE_COLOR}))"
+    ${TQ_EXIT_CODE_PREFIX}%?${TQ_EXIT_CODE_SUFFIX}\
+    ${TQ_EXIT_CODE_COLOR}))"
 
 # Time
 local prompt_time="\
 $(_get_prompt_section\
-    ${DAT_TIME_PREFIX}'$(_get_date_string)'${DAT_TIME_SUFFIX}\
-    ${DAT_TIME_COLOR}
+    ${TQ_TIME_PREFIX}'$(_get_date_string)'${TQ_TIME_SUFFIX}\
+    ${TQ_TIME_COLOR}
 )"
 
 # Tip
@@ -197,9 +194,9 @@ local prompt_tip='$(_get_prompt_tip)'
 _get_prompt_tip() {
     local hour=$(_get_hour)
     if [[ $hour -ge 12 ]] && [[ $hour -le 13 ]]; then
-        echo "$(_get_prompt_section ${DAK_FOOD_SYMBOL} ${DAK_FOOD_SYMBOL_COLOR}) "
+        echo "$(_get_prompt_section ${TQ_FOOD_SYMBOL} ${TQ_TIP_COLOR}) "
     elif [[ $hour -ge 21 ]] || [[ $hour -le 3 ]]; then
-        echo "$(_get_prompt_section ${DAK_NIGHT_SYMBOL} ${DAK_NIGHT_SYMBOL_COLOR}) "
+        echo "$(_get_prompt_section ${TQ_NIGHT_SYMBOL} ${TQ_TIP_COLOR}) "
     fi
 }
 
