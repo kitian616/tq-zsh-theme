@@ -154,7 +154,6 @@ _get_prompt_user() {
 local prompt_evn='$(_get_prompt_env)'
 _get_prompt_env() {
     if [[ -n $SSH_CONNECTION ]]; then
-        return "$TQ_SSH_SYMBOL "
         echo "$(_get_prompt_section\
             ${TQ_ENV_PREFIX}${TQ_SSH_SYMBOL}${TQ_ENV_SUFFIX}\
             ${TQ_ENV_COLOR}) "
