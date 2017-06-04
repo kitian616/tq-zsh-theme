@@ -24,6 +24,11 @@ TQ_USER_SUFFIX="${TQ_USER_SUFFIX:=""}"
 TQ_USER_COLOR="${TQ_USER_COLOR:="yellow"}"
 TQ_SUPERUSER_COLOR="${TQ_SUPERUSER_COLOR:="red"}"
 
+# Env
+TQ_ENV_PREFIX="${TQ_ENV_PREFIX=:=""}"
+TQ_ENV_SUFFIX="${TQ_ENV_SUFFIX=:=""}"
+TQ_ENV_COLOR="${TQ_ENV_COLOR=:="yellow"}"
+
 # Tip
 TQ_TIP_PREFIX="${TQ_TIP_PREFIX:=""}"
 TQ_TIP_SUFFIX="${TQ_TIP_SUFFIX:=""}"
@@ -145,6 +150,17 @@ _get_prompt_user() {
     fi
 }
 
+# env
+local prompt_evn='$(_get_prompt_env)'
+_get_prompt_env() {
+    if [[ -n $SSH_CONNECTION ]]; then
+        return "$TQ_SSH_SYMBOL "
+        echo "$(_get_prompt_section\
+            ${TQ_ENV_PREFIX}${TQ_SSH_SYMBOL}${TQ_ENV_SUFFIX}\
+            ${TQ_ENV_COLOR}) "
+    fi
+}
+
 # Privileges
 local prompt_privileges="\
 $(_get_prompt_section\
@@ -203,6 +219,7 @@ _get_prompt_tip() {
 }
 
 PROMPT="
+$prompt_evn\
 $prompt_user\
 $prompt_directory\
 $prompt_git_brance\
