@@ -1,6 +1,6 @@
 # =>tq-zsh-theme
 
-`=>`tq is a theme for Oh-My-Zsh.
+tq is a theme for Oh-My-Zsh.
 
 ## Feature
 
@@ -16,7 +16,11 @@
 
 ![Screenshot](https://github.com/kitian616/tq-zsh-theme/blob/master/Screenshot.png?raw=true)
 
-## How to installexit_code
+## How to install
+
+### Install Powerline Fonts
+
+You can see the installation guide [here](https://github.com/powerline/fonts).
 
 ### Install for Oh-My-ZSH
 
