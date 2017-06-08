@@ -1,5 +1,8 @@
 # =>tq-zsh-theme
 
+[![ZSH][zsh-image]][zsh-url]
+[![Oh-My-Zsh][omz-image]][omz-url]
+
 tq is a theme for Oh-My-Zsh.
 
 ## Feature
@@ -7,10 +10,23 @@ tq is a theme for Oh-My-Zsh.
 - Username
 - Hostname
 - Current directory
-- Git branch info
-- Git status info
+- Current git branch
+- Git repo status:
+  - `?` — untracked changes;
+  - `+` — uncommitted changes in the index;
+  - `!` — unstaged changes;
+  - `»` — renamed files;
+  - `✘` — deleted files;
+  - `$` — stashed changes;
+  - `=` — unmerged changes;
+  - `⇡` — ahead of remote branch;
+  - `⇣` — behind of remote branch;
+  - `⇕` — diverged chages.
 - Time stamp
 - Exit code
+- Tips:
+  - 🍚 - time to lunch
+  - 🌙 - late at night
 
 ## ScreenShot
 

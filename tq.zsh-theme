@@ -7,8 +7,9 @@
 
 # Characters
 TQ_BRANCH_SYMBOL="${TQ_BRANCH_SYMBOL:="\ue0a0"}"
-TQ_FOOD_SYMBOL="${TQ_FOOD_SYMBOL:="🍚"}"
 TQ_SSH_SYMBOL="${TQ_SSH_SYMBOL:="\ue0a2"}"
+
+TQ_FOOD_SYMBOL="${TQ_FOOD_SYMBOL:="🍚"}"
 TQ_NIGHT_SYMBOL="${TQ_NIGHT_SYMBOL:="🌙"}"
 
 # Privileges
