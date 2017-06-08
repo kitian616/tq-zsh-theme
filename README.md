@@ -1,6 +1,6 @@
 # tq-zsh-theme
 
-`=>`tq is a theme for on-my-zsh.
+`=>`tq is a theme for Oh-My-Zsh.
 
 ## Feature
 
