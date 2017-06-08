@@ -22,8 +22,8 @@
 - Time stamp
 - Exit code
 - Tips:
-  - 🍚 - time to lunch
-  - 🌙 - late at night
+  - 🍚 — time to lunch
+  - 🌙 — late at night
 
 ## ScreenShot
 
