@@ -1,6 +1,6 @@
-# =>tq-zsh-theme
+# => tq-zsh-theme
 
-> tq is a theme for Oh-My-Zsh.
+tq is a theme for ["Oh My Zsh!"](https://github.com/robbyrussell/oh-my-zsh).
 
 ## Feature
 
@@ -22,8 +22,8 @@
 - Time stamp
 - Exit code
 - Tips:
-  - 🍚 — time to lunch;
-  - 🌙 — late at night.
+  - `🍚` — time to lunch;
+  - `🌙` — late at night.
 
 ## ScreenShot
 
@@ -35,21 +35,20 @@
 
 You can see the installation guide [here](https://github.com/powerline/fonts).
 
-### Install for Oh-My-ZSH
+### Install for oh-my-zsh
 
-To install this theme for use in Oh-My-Zsh, clone this repository into your Oh-My-Zsh custom/themes directory.
+To install this theme for use in `oh-my-zsh`, clone this repository into your oh-my-zsh `custom/themes` directory.
 
 `$ git clone https://github.com/kitian616/tq-zsh-theme.git ~/.oh-my-zsh/custom/themes/tq`
 
-You then need to select this theme in your ~/.zshrc:
+You then need to select this theme in your `~/.zshrc`:
 
 `ZSH_THEME="tq/tq"`
 
 ### Install for Zplug
 
-To install this theme for use in [Zplug](https://github.com/zplug/zplug), just add this in your ~/.zshrc:
+To install this theme for use in [Zplug](https://github.com/zplug/zplug), just add this in your `~/.zshrc`:
 
 `zplug "kitian616/tq-zsh-theme", as:theme`
 
-Note that you should define any customizations at the top of your .zshrc in your .zshrc.
-
+Note that you should define any customizations at the top of your .zshrc in your `~/.zshrc`.
