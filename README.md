@@ -1,9 +1,6 @@
 # =>tq-zsh-theme
 
-[![ZSH][zsh-image]][zsh-url]
-[![Oh-My-Zsh][omz-image]][omz-url]
-
-tq is a theme for Oh-My-Zsh.
+> tq is a theme for Oh-My-Zsh.
 
 ## Feature
 
