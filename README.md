@@ -10,12 +10,13 @@
 - Git branch info
 - Git status info
 - Time stamp
+- Exit code
 
 ## ScreenShot
 
 ![Screenshot](https://github.com/kitian616/tq-zsh-theme/blob/master/Screenshot.png?raw=true)
 
-## How to install
+## How to installexit_code
 
 ### Install for Oh-My-ZSH
 
