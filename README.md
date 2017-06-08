@@ -23,7 +23,7 @@
 - Exit code
 - Tips:
   - 🍚 — time to lunch;
-  - 🌙 — late at night,
+  - 🌙 — late at night.
 
 ## ScreenShot
 
