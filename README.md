@@ -13,7 +13,7 @@
 
 ## ScreenShot
 
-![Screenshot](https://raw.githubusercontent.com/kitian616/tq-zsh-theme/master/Screenshot%20.jpg)
+![Screenshot](https://github.com/kitian616/tq-zsh-theme/blob/master/Screenshot.png?raw=true)
 
 ## How to install
 
