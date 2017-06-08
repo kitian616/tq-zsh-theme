@@ -1,4 +1,4 @@
-# tq-zsh-theme
+# =>tq-zsh-theme
 
 `=>`tq is a theme for Oh-My-Zsh.
 
