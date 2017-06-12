@@ -218,6 +218,12 @@ _get_prompt_tip() {
     fi
 }
 
+BASE_PATH="$(dirname $0:A)"
+get_tip='$(tips)'
+tips() {
+    zsh "$BASE_PATH/plugins/timer/timer.plugin.zsh" "$time_table"
+}
+
 PROMPT="
 $prompt_evn\
 $prompt_user\
@@ -228,6 +234,6 @@ $prompt_exit_code\
 $prompt_privileges"
 
 RPROMPT="\
-$prompt_tip\
+$get_tip\
 $prompt_time\
 "
