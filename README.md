@@ -1,6 +1,7 @@
-# => tq-zsh-theme
+# => tq-zsh-theme 2
 
 tq is a theme for ["Oh My Zsh!"](https://github.com/robbyrussell/oh-my-zsh).
+now let's make it more cool. version 2, with plugins!
 
 ## Feature
 
@@ -28,6 +29,13 @@ tq is a theme for ["Oh My Zsh!"](https://github.com/robbyrussell/oh-my-zsh).
 ## ScreenShot
 
 ![Screenshot](https://github.com/kitian616/tq-zsh-theme/blob/master/Screenshot.png?raw=true)
+
+## TODO list
+
+- [ ] plugin system
+- [ ] timer-plugin
+- [ ] aqi-plugin
+- [ ] introduce(gif)
 
 ## How to install
 
