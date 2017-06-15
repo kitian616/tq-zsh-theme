@@ -218,11 +218,14 @@ _get_prompt_tip() {
     fi
 }
 
-BASE_PATH="$(dirname $0:A)"
-get_tip='$(tips)'
-tips() {
-    zsh "$BASE_PATH/plugins/timer/timer.plugin.zsh" "$time_table"
-}
+PLUGIN_PROMPT=""
+for DIC in ./plugins/*; do
+    if [[ -d $DIC ]]; then
+        local BASE_DIC=$(basename $DIC)
+        source $DIC/${BASE_DIC}.tq-plugin.zsh
+        PLUGIN_PROMPT=${PLUGIN_PROMPT}"\$(${BASE_DIC}_main) "
+    fi
+done
 
 PROMPT="
 $prompt_evn\
@@ -234,6 +237,6 @@ $prompt_exit_code\
 $prompt_privileges"
 
 RPROMPT="\
-$get_tip\
+$PLUGIN_PROMPT\
 $prompt_time\
 "
