@@ -1,9 +1,15 @@
-#
-# tq ZSH Theme
+##
+# tq-zsh-theme
 #
 # Author: Tian Qi
 # License: MIT
 # https://github.com/kitian616/tq-zsh-theme
+
+# Base
+local script_path="$(dirname $0:A)"
+
+# Plugin path
+PLUGIN_PATH=${script_path}/plugins
 
 # Characters
 TQ_BRANCH_SYMBOL="${TQ_BRANCH_SYMBOL:="\ue0a0"}"
@@ -84,6 +90,7 @@ ZSH_THEME_GIT_PROMPT_DIVERGED=$TQ_GIT_STATUS_DIVERGED
 
 _get_pwd() {
     local git_root=$PWD
+    local parent prompt_short_dir
     while [[ $git_root != / && ! -e $git_root/.git ]]; do
         git_root=$git_root:h
     done
@@ -132,8 +139,8 @@ _get_prompt_section() {
 local prompt_user='$(_get_prompt_user)'
 _get_prompt_user() {
     local superuser_or_not=$(_is_superuser)
-    [[ $LOGNAME != $USER ]] || [[ $superuser_or_not -eq 0 ]] || [[ -n $SSH_CONNECTION ]] || return
     local prompt_text
+    [[ $LOGNAME != $USER ]] || [[ $superuser_or_not -eq 0 ]] || [[ -n $SSH_CONNECTION ]] || return
     if [[ -n $SSH_CONNECTION ]]; then
         prompt_text=${TQ_USER_PREFIX}${USER}@$(hostname -s)${TQ_USER_SUFFIX}
     else
@@ -207,29 +214,19 @@ $(_get_prompt_section\
     ${TQ_TIME_COLOR}
 )"
 
-# Tip
-local prompt_tip='$(_get_prompt_tip)'
-_get_prompt_tip() {
-    local hour=$(_get_hour)
-    if [[ $hour -ge 12 ]] && [[ $hour -le 13 ]]; then
-        echo "$(_get_prompt_section ${TQ_FOOD_SYMBOL} ${TQ_TIP_COLOR}) "
-    elif [[ $hour -ge 21 ]] || [[ $hour -le 3 ]]; then
-        echo "$(_get_prompt_section ${TQ_NIGHT_SYMBOL} ${TQ_TIP_COLOR}) "
-    fi
-}
-
 # Load Plugins
-SCRIPT_PATH="$(dirname $0:A)"
-PLUGIN_PATH=${SCRIPT_PATH}/plugins
-local __plugin_prompt=""
-local __path
-for __path in ${PLUGIN_PATH}/*; do
-    if [[ -d $__path ]]; then
-        local __base_path=$(basename $__path)
-        source $__path/${__base_path}.tq-plugin.zsh
-        plugin_prompt=${__plugin_prompt}"\$(${__base_path}_main) "
-    fi
-done
+local plugin_prompt=""
+load_plugins() {
+    local plugin_full_path plugin_base_path
+    for plugin_full_path in ${PLUGIN_PATH}/*; do
+        if [[ -d ${plugin_full_path} ]]; then
+            plugin_base_path=$(basename ${plugin_full_path})
+            source ${plugin_full_path}/${plugin_base_path}.tq-plugin.zsh
+            plugin_prompt=${plugin_prompt}"\$(${plugin_base_path}_main) "
+        fi
+    done
+}
+load_plugins
 
 PROMPT="
 $prompt_evn\
