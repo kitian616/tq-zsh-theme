@@ -218,12 +218,16 @@ _get_prompt_tip() {
     fi
 }
 
-PLUGIN_PROMPT=""
-for DIC in ./plugins/*; do
-    if [[ -d $DIC ]]; then
-        local BASE_DIC=$(basename $DIC)
-        source $DIC/${BASE_DIC}.tq-plugin.zsh
-        PLUGIN_PROMPT=${PLUGIN_PROMPT}"\$(${BASE_DIC}_main) "
+# Load Plugins
+SCRIPT_PATH="$(dirname $0:A)"
+PLUGIN_PATH=${SCRIPT_PATH}/plugins
+local __plugin_prompt=""
+local __path
+for __path in ${PLUGIN_PATH}/*; do
+    if [[ -d $__path ]]; then
+        local __base_path=$(basename $__path)
+        source $__path/${__base_path}.tq-plugin.zsh
+        plugin_prompt=${__plugin_prompt}"\$(${__base_path}_main) "
     fi
 done
 
@@ -237,6 +241,6 @@ $prompt_exit_code\
 $prompt_privileges"
 
 RPROMPT="\
-$PLUGIN_PROMPT\
+$plugin_prompt\
 $prompt_time\
 "

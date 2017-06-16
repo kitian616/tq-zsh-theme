@@ -76,12 +76,4 @@ const run = () => {
     process.exit(1);
 };
 
-// console.log(process.argv[2]);
-// parseTimeTable(process.argv[2]).forEach(item => {
-//     console.log(item);
-// });
-// getTip(_timeTable);
-
-// console.log(parseVersionString(process.version));
-
 run();
